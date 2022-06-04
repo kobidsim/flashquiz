@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import FlashCardList from "./FlashCardList";
 import "./app.css"
 import axios from 'axios';
+import NavBar from './NavBar.js';
 
 function App() {
   const [flashCards, setFlashCards] = useState(SAMPLE_DATA);
@@ -29,9 +30,12 @@ function App() {
     []
   );
   return (
-    <div className="container">
-      <FlashCardList flashcards={flashCards} />
-    </div>
+    <>
+      <NavBar />
+      <div className="container">
+        <FlashCardList flashcards={flashCards} />
+      </div>
+    </>
   );
 }
 
