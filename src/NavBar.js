@@ -1,4 +1,5 @@
 import "./Nav.css";
+import { Link } from 'react-router-dom';
 
 function NavBar(){
     return(
@@ -6,12 +7,12 @@ function NavBar(){
             <h1 className="logo">Flash Quiz</h1>
             <nav>
                 <ul className="navlinks">
-                    <li><a>Home</a></li>
-                    <li><a>Play</a></li>
-                    <li><a>Credits</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/play">Play</Link></li>
+                    <li><Link to="/credits">Credits</Link></li>
                 </ul>
             </nav>
-            <a href="#" class="cta"><button>Contact</button></a>
+            <Link to="/contacts" class="cta"><button>Contact</button></Link>
         </header>
     )
 }

@@ -3,6 +3,10 @@ import FlashCardList from "./FlashCardList";
 import "./app.css"
 import axios from 'axios';
 import NavBar from './NavBar.js';
+import Home from './Home.js';
+import Credits from './Credits.js'
+import Contacts from './Contacts.js'
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [flashCards, setFlashCards] = useState(SAMPLE_DATA);
@@ -31,10 +35,17 @@ function App() {
   );
   return (
     <>
-      <NavBar />
-      <div className="container">
-        <FlashCardList flashcards={flashCards} />
-      </div>
+        <NavBar />
+        
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/play" element={<FlashCardList flashcards={flashCards} />} />
+            <Route path="/credits" element={<Credits />} />
+            <Route path="/contacts" element={<Contacts />} />
+          </Routes>
+          
+        </div>
     </>
   );
 }
